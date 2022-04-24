@@ -1,0 +1,26 @@
+# dependencies
+/cakesite/secrets
+/mongodb/
+/env
+/.idea
+
+/gui/node_modules
+/gui/.pnp
+/gui/.pnp.js
+
+# testing
+/gui/coverage
+
+# production
+/gui/build
+
+# misc
+/gui/.DS_Store
+/gui/.env.local
+/gui/.env.development.local
+/gui/.env.test.local
+/gui/.env.production.local
+
+/gui/npm-debug.log*
+/gui/yarn-debug.log*
+/gui/yarn-error.log*
