@@ -1,0 +1,5 @@
+# install required pip apps
+- mongoengine
+- pymongo==3.12.3
+- dnspython
+- djongo
