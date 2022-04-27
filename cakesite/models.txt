@@ -1,0 +1,42 @@
+MODELOS
+
+CATALOGO <gestor>
+-- pasteles seleccionados
+
+PASTEL <gestor>
+-- nombre de pastel
+-- imagen
+-- ingredientes
+-- precio
+
+INFO_PEDIDO <cliente, gestor>
+-- PASTEL <seleccionado o personalizado>
+-- mensaje <seleccionado>
+-- fecha de entrega
+-- nombre de la persona
+-- correo
+-- teléfono
+-- dirección
+-- tipo de entrega
+-- precio total <seleccionado>
+
+PEDIDO <gestor>
+-- INFO_PEDIDO
+-- estatus <sin confirmar, 
+		confirmado, 
+		entregado, 
+		cancelado>
+-- código de pedido
+
+CANCELACIONES <cliente, gestor>
+-- código de pedido
+-- nombre de la persona
+-- telefono
+
+CONTACTO_SITIO <gestor>
+-- n. telefono
+-- facebook
+-- correo
+
+
+
