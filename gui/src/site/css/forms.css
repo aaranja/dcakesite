@@ -1,0 +1,31 @@
+
+.form-order-div {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.form-order {
+    max-width: 767px;
+    margin: auto;
+}
+
+.login-form {
+    min-width: 350px;
+    margin: auto;
+
+}
+
+@media (max-width: 767px) {
+    .form-order {
+        width: 100%;
+    }
+
+    .login-form {
+
+        margin: auto;
+
+    }
+}
