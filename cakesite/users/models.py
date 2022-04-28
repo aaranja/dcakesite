@@ -4,17 +4,6 @@ from djongo import models
 from .managers import AccountManager
 
 
-class CustomerProfile(models.Model):
-    first_name = models.CharField(max_length=150, blank=True)
-    last_name = models.CharField(max_length=150, blank=True)
-    cellphone = models.CharField(blank=True, default=None, max_length=10)
-    address_first = models.CharField(max_length=250, blank=True)
-    address_second = models.CharField(max_length=250, blank=True)
-
-    class Meta:
-        abstract = True
-
-
 class Account(AbstractUser):
     """
     Account model to all users
@@ -27,10 +16,6 @@ class Account(AbstractUser):
     # set email and usertype fields
     email = models.EmailField(_('email_address'), unique=True)
     user_type = models.CharField(blank=True, max_length=15)
-
-    customer_profile = models.EmbeddedField(
-        model_container=CustomerProfile,
-    )
     objects = AccountManager()
 
     USERNAME_FIELD = 'email'
