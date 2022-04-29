@@ -1,4 +1,4 @@
-import {AUTH_LOGOUT} from "./actionTypes";
+import {AUTH_LOGOUT} from "./actionTypes";// sleep time expects milliseconds
 
 export const updateObject = (oldObject, updateProperties) => {
     return {
@@ -21,6 +21,11 @@ export const isAuthenticated = (dispatch, token) => {
     }
     return true;
 };
+
+// sleep time expects milliseconds
+export const sleep = (time) => {
+    return new Promise((resolve) => setTimeout(resolve, time));
+}
 
 export const removeDataStorage = () => {
     localStorage.removeItem("token");
