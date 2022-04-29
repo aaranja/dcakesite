@@ -2,7 +2,8 @@ import React, {Component} from "react";
 import {Button, Container, Form} from "react-bootstrap";
 import "../../site/css/forms.css"
 import withNavigation from "../../routes/withRouter/withNavigation";
-
+import {connect} from "react-redux";
+import {authAdmin} from "../../store/actions/auth";
 
 
 class AdminLogin extends Component {
@@ -14,7 +15,9 @@ class AdminLogin extends Component {
             email: form.elements.formBasicEmail.value,
             password: form.elements.formBasicPassword.value
         }
-        this.props.navigate("/admin-site/home")
+
+        this.props.authLogin(sessionData.email, sessionData.password);
+        // this.props.navigate("/admin-site/home")
 
     }
 
@@ -42,4 +45,17 @@ class AdminLogin extends Component {
     }
 }
 
-export default withNavigation(AdminLogin);
+const mapStateToProps = (state) => {
+    console.log(state)
+    return {}
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        authLogin: (email, password) => {
+            dispatch(authAdmin(email, password))
+        }
+    }
+}
+
+export default withNavigation(connect(mapStateToProps, mapDispatchToProps)(AdminLogin));
