@@ -12,6 +12,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const store = configureStore({
     reducer: rootReducer,
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
 }); //, composeEnhances(applyMiddleware(thunk)));
 
 root.render(
