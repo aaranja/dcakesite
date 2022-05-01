@@ -12,12 +12,6 @@ export class App extends Component {
         };
     }
 
-    componentDidMount() {
-        console.log(this.props)
-        console.log("comprobar sesión")
-        // this.props.onTryAutoSignup();
-    }
-
     render() {
         return (
             <div>
