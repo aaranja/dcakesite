@@ -1,8 +1,9 @@
 import React, {Component} from "react";
+import {Container} from "react-bootstrap";
 
 class AdminPanel extends Component {
     render() {
-        return <div>Sistema de cakesite</div>
+        return <Container><span>Sistema de cakesite</span></Container>
     }
 }
 
