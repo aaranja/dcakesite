@@ -9,9 +9,10 @@ import Home from "../pages/Home";
 import OrderReview from "../pages/OrderReview";
 import Order from "../containers/Order";
 import MakeOrder from "../pages/MakeOrder";
-import AdminSite from "../pages/AdminSite";
 import AdminLogin from "../pages/AdminLogin";
 import AdminPanel from "../pages/AdminPanel";
+import PrivateRoute from "./private";
+import Products from "../pages/Products";
 
 const BaseRouter = () => {
     return <BrowserRouter>
@@ -30,9 +31,10 @@ const BaseRouter = () => {
                         </main>}
                 />
             </Route>
-            <Route path="/admin-site" element={<AdminSite/>}>
-                <Route path="login" element={<AdminLogin/>}/>
-                <Route path="home" element={<AdminPanel/>}/>
+            <Route path="/admin-site/login" element={<AdminLogin/>}/>
+            <Route path="/admin-site" element={<PrivateRoute/>}>
+                <Route path="" element={<AdminPanel/>}/>
+                <Route path="products" element={<Products/>}/>
             </Route>
         </Routes>
     </BrowserRouter>
