@@ -41,6 +41,7 @@ const authFail = (state, action) => {
 const authLogout = (state) => {
     return updateObject(state, {
         payload: null,
+        status: "session_expired",
     });
 };
 
