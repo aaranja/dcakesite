@@ -82,8 +82,15 @@ export const authAdmin = (email, password) => {
                 dispatch(checkAuthTimeout(3600));
             })
             .catch((err) => {
-                console.log(err.response)
-                dispatch(authFail(err.response.data));
+                let messages = {}
+                if (err.code === "ERR_NETWORK") {
+                    messages = {
+                        non_field_errors: ["No se pudo localizar el servidor"],
+                    }
+                } else {
+                    messages = err.response.data
+                }
+                dispatch(authFail(messages));
             });
     };
 };
