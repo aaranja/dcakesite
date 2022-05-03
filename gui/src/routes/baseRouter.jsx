@@ -13,6 +13,7 @@ import AdminLogin from "../pages/AdminLogin";
 import AdminPanel from "../pages/AdminPanel";
 import PrivateRoute from "./private";
 import Products from "../pages/Products";
+import ProductItem from "../pages/ProductItem";
 
 const BaseRouter = () => {
     return <BrowserRouter>
@@ -34,7 +35,10 @@ const BaseRouter = () => {
             <Route path="/admin-site/login" element={<AdminLogin/>}/>
             <Route path="/admin-site" element={<PrivateRoute/>}>
                 <Route path="" element={<AdminPanel/>}/>
-                <Route path="products" element={<Products/>}/>
+                <Route path="products" element={<Products/>}>
+                    <Route path="" element={<main/>} index/>
+                    <Route path=":productId" element={<ProductItem/>}/>
+                </Route>
             </Route>
         </Routes>
     </BrowserRouter>
