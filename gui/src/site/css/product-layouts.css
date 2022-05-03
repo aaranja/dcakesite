@@ -1,0 +1,39 @@
+
+.with-right {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.product-inv {
+    max-width: 26rem;
+    margin-left: auto;
+}
+
+.form-product-item {
+    max-width: 767px;
+    margin: auto;
+}
+
+@media (max-width: 991px) {
+    .with-right {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .product-inv {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .with-right {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .product-inv {
+        max-width: 100%;
+    }
+}
