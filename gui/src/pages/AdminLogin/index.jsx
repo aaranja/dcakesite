@@ -51,49 +51,47 @@ class AdminLogin extends Component {
         this.setState({
             loging: true,
         })
-
-
     }
 
     render() {
         return <>
             <SessionHeader logged={false} closeSession={null}/>
             <Container>
-
-            <div className="form-order-div">
-                <Form className="login-form" onSubmit={this.onLogin}><h4>Cake admin site
-                </h4>
-                    {
-                        this.state.error ? <Alert variant="danger">
-                            {this.state.msg_error["non_field_errors"]}
-                        </Alert> : null
-                    }
-                    <Form.Floating className="mb-3">
-                        <Form.Control type="email" placeholder="Enter email" id="formBasicEmail"/>
-                        <label htmlFor="formBasicEmail">Correo electrónico</label>
-                    </Form.Floating>
-                    <Form.Floating className="mb-3">
-                        <Form.Control type="password" placeholder="Password" id="formBasicPassword"/>
-                        <label htmlFor="formBasicPassword">Contraseña</label>
-                    </Form.Floating>
-                    <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label="Guardar sesión"/>
-                    </Form.Group>
-                    {
-                        this.state.loging ? <Button variant="primary" type="submit" disabled>
-                            <Spinner
-                                as="span"
-                                animation="border"
-                                size="sm"
-                                role="status"
-                                aria-hidden="true"
-                            /> {" "}
-                            Iniciando sesión
-                        </Button> : <Button variant="primary" type="submit">Iniciar sesión</Button>
-                    }
-                </Form>
-            </div>
-        </Container> </>
+                <div className="form-order-div">
+                    <Form className="login-form" onSubmit={this.onLogin}><h4>Cake admin site
+                    </h4>
+                        {
+                            this.state.error ? <Alert variant="danger">
+                                {this.state.msg_error["non_field_errors"]}
+                            </Alert> : null
+                        }
+                        <Form.Floating className="mb-3">
+                            <Form.Control type="email" placeholder="Enter email" id="formBasicEmail"/>
+                            <label htmlFor="formBasicEmail">Correo electrónico</label>
+                        </Form.Floating>
+                        <Form.Floating className="mb-3">
+                            <Form.Control type="password" placeholder="Password" id="formBasicPassword"/>
+                            <label htmlFor="formBasicPassword">Contraseña</label>
+                        </Form.Floating>
+                        <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                            <Form.Check type="checkbox" label="Guardar sesión"/>
+                        </Form.Group>
+                        {
+                            this.state.loging ? <Button variant="primary" type="submit" disabled>
+                                <Spinner
+                                    as="span"
+                                    animation="border"
+                                    size="sm"
+                                    role="status"
+                                    aria-hidden="true"
+                                />{" "}
+                                Iniciando sesión
+                            </Button> : <Button variant="primary" type="submit">Iniciar sesión</Button>
+                        }
+                    </Form>
+                </div>
+            </Container>
+        </>
     }
 }
 
