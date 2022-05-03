@@ -6,8 +6,9 @@ CATALOGO <gestor>
 PASTEL <gestor>
 -- nombre de pastel
 -- imagen
--- ingredientes
+-- descripción
 -- precio
+-- disponible
 
 INFO_PEDIDO <cliente, gestor>
 -- PASTEL <seleccionado o personalizado>
